@@ -1,3 +1,5 @@
+@import 'compass/css3';
+
 /**
  * Styles for IE9+ compatibility
  */
@@ -10,3 +12,28 @@ body {
   color: #fff;
 }
 
+
+
+// Sun animation on hover
+.sun-icon .sunrays {
+  @include animation-name(shining-sun);
+  @include animation-duration(5s);
+  @include animation-iteration-count(infinite);
+  @include animation-direction(normal);
+  @include animation-timing-function(linear);
+  @include transform-origin(50%, 50%, 0, 0);
+  @include animation-play-state(paused);
+
+}
+.sun-icon:hover .sunrays {
+  @include animation-play-state(running);
+}
+
+@include keyframes(shining-sun) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
