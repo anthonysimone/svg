@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SVG</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/foundation.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/snap-icons.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <script src="assets/js/snap.svg-min.js"></script>
-    <script src="assets/js/modernizr.custom.js"></script>
+  <meta charset="UTF-8">
+  <title>SVG</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/foundation.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/snap-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+  <script src="assets/js/snap.svg-min.js"></script>
+  <script src="assets/js/modernizr.custom.js"></script>
 </head>
 <body>
 <div id="content">
@@ -54,51 +54,73 @@
                 </g>
                 <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
-            </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<section class="svg-toggles">
+
+    <div class="as-image">
+      <div class="row">
+        <h2>SVG as &lt;img&gt;</h2>
+        <div class="columns large-6">
+          <img class="img-svg" src="assets/svg/start.svg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="as-bg">
+      <div class="row">
+        <div class="columns large-6">
+          <div class="svg-bg start-bg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="svg-toggles">
     <h2>Toggleables</h2>
+
     <div class="si-icons si-icons-default">
-        <span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
-        <span class="si-icon si-icon-nav-up-arrow" data-icon-name="navUpArrow"></span>
-        <span class="si-icon si-icon-right-arrow" data-icon-name="rightArrow"></span>
-        <span class="si-icon si-icon-down-arrow" data-icon-name="downArrow"></span>
+      <span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
+      <span class="si-icon si-icon-nav-up-arrow" data-icon-name="navUpArrow"></span>
+      <span class="si-icon si-icon-right-arrow" data-icon-name="rightArrow"></span>
+      <span class="si-icon si-icon-down-arrow" data-icon-name="downArrow"></span>
     </div>
-</section>
-<section class="notes">
+  </section>
+  <section class="notes">
     <div>
-        Resources
-        <ul>
-            <ul>- SVG Icon animations - http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/</ul>
-            <ul>- Responsive svg - http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/</ul>
-            <ul>- Nesting 3d transforms - http://davidwalsh.name/3d-transforms</ul>
-            <ul>- Sara Soueidan Smashing Magazine series - http://www.smashingmagazine.com/2014/11/03/styling-and-animating-svgs-with-css/</ul>
+      Resources
+      <ul>
+        <ul>- SVG Icon animations - http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/</ul>
+        <ul>- Responsive svg - http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/</ul>
+        <ul>- Nesting 3d transforms - http://davidwalsh.name/3d-transforms</ul>
+        <ul>- Sara Soueidan Smashing Magazine series -
+          http://www.smashingmagazine.com/2014/11/03/styling-and-animating-svgs-with-css/
         </ul>
-        SVG Notes
+      </ul>
+      SVG Notes
+      <ul>
+        <li>- Benefits</li>
         <ul>
-            <li>- Benefits</li>
-            <ul>
-                <li>- OMG so many</li>
-                <li>- support in IE9+, and all other modern-ish browsers</li>
-                <li>- IE9-11 doesn't always play by the same rules, unfortunately</li>
-                <li>- In safari/chrome/ff/opera svg acts almost exactly as you'd expect images to act, inline and as bg, IE makes a bit more complicated, but once you know how IE behaves, it's not too hard to work around</li>
-            </ul>
-            <li>- Drawbacks</li>
-            <ul>
-                <li>- no IE8, flatout</li>
-                <li>- they don't necessarily play nice as uploaded content into CMS</li>
-                <li>- There are spriting options available, but not</li>
-            </ul>
-            <li>- Go over bg, inline, <img></li>
-            <li>- NJH example</li>
-            <li>- Some other examples of usecases</li>
-            <li>- snap.js / svg.js - libraries for on the fly svg creation and manipulation</li>
+          <li>- OMG so many</li>
+          <li>- support in IE9+, and all other modern-ish browsers</li>
+          <li>- IE9-11 doesn't always play by the same rules, unfortunately</li>
+          <li>- In safari/chrome/ff/opera svg acts almost exactly as you'd expect images to act, inline and as bg, IE
+            makes a bit more complicated, but once you know how IE behaves, it's not too hard to work around
+          </li>
         </ul>
+        <li>- Drawbacks</li>
+        <ul>
+          <li>- no IE8, flatout</li>
+          <li>- they don't necessarily play nice as uploaded content into CMS</li>
+          <li>- There are spriting options available, but not</li>
+        </ul>
+        <li>- Go over bg, inline, <img></li>
+        <li>- NJH example</li>
+        <li>- Some other examples of usecases</li>
+        <li>- snap.js / svg.js - libraries for on the fly svg creation and manipulation</li>
+      </ul>
     </div>
-</section>
+  </section>
 </div>
 <script src="assets/js/svgicons-config.js"></script>
 <script src="assets/js/svgicons.js"></script>
