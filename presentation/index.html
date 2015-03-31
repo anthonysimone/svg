@@ -59,14 +59,24 @@
 				</section>
 
         <section>
-          <h2>How do you use svg?</h2>
+          <h2>Why is it good?</h2>
           <ul>
-            <li>Inline</li>
-            <li>Via &lt;img&gt; tag</li>
-            <li>As a background-image via CSS</li>
-            <li>&lt;object&gt; &lt;embed&gt; &lt;iframe&gt; can all be usd to include SVG as well, however, most often, your best bet will be one of the first three</li>
+            <li>Future-proof, crisp icons at any resolution</li>
+            <li>One asset for any size icons at any resolution</li>
+            <li>Generally good support now IE9+</li>
+            <li>Very flexible, modify with CSS/JS</li>
+            <li>Lightweight when compared to raster equivalents, especially for larger images</li>
+            <li>Tools like snap.js or svg.js exist</li>
+          </ul>
+          <h3>Why might it not be so good?</h3>
+          <ul>
+            <li>No support for IE8, flat out</li>
+            <li>Can initially be frustrating to work around IE quirks</li>
+            <li>Handful of spriting options, yet some have less IE support, some aren't totally ideal, some might feel quite complicated, need to determine if that matters in your project</li>
+            <li>Might need special handling for uploading to Drupal (?)</li>
           </ul>
         </section>
+
 
         <section>
           <h2>How do you get it?</h2>
@@ -103,79 +113,124 @@
           <section>
             <h3>Important Attributes</h3>
             <ul>
-              <li><b>viewBox</b> - This defines</li>
-              <li><b>preserveAspectRatio</b></li>
-              <li><b>xml:space</b></li>
+              <li><b>viewBox</b> - This defines the portion of the SVG that you will view as your canvas. Usually, you want to view the entire space, so leave the defaults from the export.</li>
+              <li><b>preserveAspectRatio</b> - determines how the image is presented within the canvas space and when the element changes sizes</li>
+              <li><b>height</b> and <b>width</b> - often present in default output from illustrator, but >99% of the time, you don't want to define these attributes, they can interfere with responsive styling</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>SVG elements</h3>
+            <ul>
+              <li>&lt;g&gt; - the 'div' of SVG, use for grouping elements, can be useful for targetting portions of SVG with CSS or JS if necessary</li>
+              <li>&lt;path&gt; &lt;circle&gt; &lt;rect&gt; &lt;line&gt; &lt;polygon&gt; ...</li>
+            </ul>
+            <h3>SVG attributes</h3>
+            <ul>
+              <li>fill, stroke, stroke-weight, stroke-dash-array</li>
             </ul>
           </section>
         </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h2>How do you use svg?</h2>
+            <ul>
+              <li>Inline</li>
+              <li>Via &lt;img&gt; tag</li>
+              <li>As a background-image via CSS</li>
+              <li>&lt;object&gt; &lt;embed&gt; &lt;iframe&gt; can all be usd to include SVG as well, however, most often, your best bet will be one of the first three</li>
+            </ul>
+          </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+          <section>
+            <h2>Inline SVG</h2>
+            <ul>
+              <li>Drop the code inline into the HTML</li>
+              <li>This exposes every elemtn that composes the vector image to CSS and JS</li>
+              <li>We need to add this for IE:
+              <pre><code>
+svg { //everywhere else doesn't need this, but if we support IE we must have it
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+              </code></pre>
+              </li>
+              <li>So then we generally use a div.svg-container around our inline svg</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Responsive Inline SVG</h2>
+            <ul>
+              <li>For responsive behavior and happiness across all browsers, we need to use the padding hack with the container element</li>
+              <pre><code>
+.svg-container { //inline svg needs a container and padding hack to responsively size
+  width: 100%;
+  height: 0;
+  padding-top: 128%; //targets the aspect ratio of the SVG
+  position: relative;
+}
+.svg-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+              </code></pre>
+            </ul>
+          </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+          <section>
+            <h2>Image SVG via &lt;img&gt;</h2>
+            <ul>
+              <li>Add just as you would a .jpg or .png with an &lt;img&gt; tag</li>
+              <li>Less fussy than inline svg, behaves almost exactly as you would expect, but IE needs special treatment:
+                <pre><code>
+img.svg { // this makes IE happy for responsive img.svg
+  width: 100%;
+  height: auto;
+}
+                </code></pre>
+              </li>
+              <li>No access to elements within, no CSS/JS</li>
+            </ul>
+          </section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+          <section>
+            <h2>BG Image SVG</h2>
+            <ul>
+              <li>Simple implementation for responsive behavior with padding hack
+                <pre><code>
+.svg-bg {
+  background: url(../images/svg/excellent.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 0;
+  width: 100%;
+  padding-top: 128%;
+}
+                </code></pre>
+              </li>
+              <li><b>IE Alert:</b> - IE does not do background-position for svg. SO, if you want to control the background position (an icon next to a link) then you must add it as a BG within a pseudo-element and position that</li>
+            </ul>
+          </section>
+        </section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+        <section>
+          <h2>What do we do with it?</h2>
+          <ul>
+            <li>Style it!</li>
+            <li>Move it!</li>
+            <li>Interact with it!</li>
+            <li>Build it on the fly!</li>
+            <li>Use data to affect the constructed SVG!</li>
+          </ul>
+        </section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
 
-						```
-						<section data-markdown>
-						  ## Markdown support
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+
+
 
 				<section>
 					<section id="fragments">
