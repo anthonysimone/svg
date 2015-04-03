@@ -1,0 +1,43 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 44" enable-background="new 0 0 40 44" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+<path fill="#0176B9" d="M19.9,43.2L8.4,34.3C6.2,32.5,5,29.8,5,26.9V4.7h30v22.2c0,2.8-1.2,5.6-3.4,7.4L19.9,43.2z"/>
+<g>
+	<defs>
+		<path id="SVGID_3_" d="M5,4.7v22.2c0,2.8,1.2,5.5,3.4,7.4l11.6,8.9l11.7-8.9c2.2-1.9,3.4-4.6,3.4-7.4V4.7H5z"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_4_)" fill="#44B64A" d="M19.9,43.2L8.4,34.3C6.2,32.5,5,29.8,5,26.9V4.7h30v22.2
+		c0,2.8-1.2,5.6-3.4,7.4L19.9,43.2z"/>
+	<rect x="19.9" y="2.1" clip-path="url(#SVGID_4_)" fill="#32A048" width="21.1" height="42.6"/>
+</g>
+<path fill="none" stroke="#02608A" stroke-width="2.200000e-02" stroke-miterlimit="10" d="M19.9,43.2L8.4,34.3
+	C6.2,32.5,5,29.8,5,26.9V4.7h30v22.2c0,2.8-1.2,5.6-3.4,7.4L19.9,43.2z"/>
+<path fill="none" stroke="#227D3E" stroke-width="1.306" stroke-miterlimit="10" d="M19.9,43.2L8.4,34.3C6.2,32.5,5,29.8,5,26.9
+	V4.7h30v22.2c0,2.8-1.2,5.6-3.4,7.4L19.9,43.2z"/>
+<g>
+	<defs>
+		<path id="SVGID_5_" d="M10.7,21.2c0,5.2,4.2,9.3,9.3,9.3s9.3-4.2,9.3-9.3c0-5.2-4.2-9.3-9.3-9.3S10.7,16,10.7,21.2"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_6_)" fill="#E87845" d="M29.4,21.2c0,5.2-4.2,9.3-9.3,9.3s-9.3-4.2-9.3-9.3c0-5.2,4.2-9.3,9.3-9.3
+		S29.4,16,29.4,21.2"/>
+	<path clip-path="url(#SVGID_6_)" fill="#D86132" d="M20.1,11.8c5.2,0,9.3,4.2,9.3,9.3c0,5.2-4.2,9.3-9.3,9.3"/>
+	<path clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="0.982" stroke-miterlimit="10" d="M30.8,11.6
+		c0,2.9-4.8,5.2-10.8,5.2S9.3,14.5,9.3,11.6"/>
+	<path clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="0.982" stroke-miterlimit="10" d="M30.8,30.5
+		c0-2.9-4.8-5.2-10.8-5.2S9.3,27.6,9.3,30.5"/>
+	<path clip-path="url(#SVGID_6_)" fill="none" stroke="#DEDDDC" stroke-width="0.982" stroke-miterlimit="10" d="M30.8,11.6
+		c0,2.9-4.8,5.2-10.8,5.2"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#DEDDDC" stroke-width="0.982" stroke-miterlimit="10" x1="20.1" y1="21.2" x2="29.4" y2="21.2"/>
+	<path clip-path="url(#SVGID_6_)" fill="none" stroke="#DEDDDC" stroke-width="0.982" stroke-miterlimit="10" d="M30.8,30.5
+		c0-2.9-4.8-5.2-10.8-5.2"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="0.982" stroke-miterlimit="10" x1="20.1" y1="30.5" x2="20.1" y2="11.8"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="0.984" stroke-miterlimit="10" x1="10.7" y1="21.2" x2="20.1" y2="21.2"/>
+</g>
+</svg>
