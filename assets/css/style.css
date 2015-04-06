@@ -1,14 +1,134 @@
+/* line 1, ../sass/partials/_layout.scss */
+.row {
+  max-width: 71.25rem;
+}
+
+/* line 1, ../sass/partials/_default.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* line 5, ../sass/partials/_default.scss */
+section.main-section {
+  padding: 5rem 0;
+}
+/* line 7, ../sass/partials/_default.scss */
+section.main-section:nth-child(2n) {
+  background: #96b7d9;
+}
+/* line 10, ../sass/partials/_default.scss */
+section.main-section:nth-child(2n+1) {
+  background: #8bafd5;
+}
+
+/* line 16, ../sass/partials/_default.scss */
+.shrink-click path,
+.shrink-click polygon,
+.shrink-click circle {
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -moz-transition: 1000ms, ease;
+  -o-transition: 1000ms, ease;
+  -webkit-transition: 1000ms, ease;
+  transition: 1000ms, ease;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+/* line 24, ../sass/partials/_default.scss */
+.shrink-click .shrink {
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+
+/* line 31, ../sass/partials/_default.scss */
+.sunset .whole-sun .sunrays {
+  fill: #a54127;
+}
+/* line 34, ../sass/partials/_default.scss */
+.sunset .whole-sun .sunball {
+  fill: #e1673d;
+}
+/* line 38, ../sass/partials/_default.scss */
+.sunset .sky {
+  fill: #FFDD4B;
+}
+/* line 41, ../sass/partials/_default.scss */
+.sunset .earth {
+  fill: #38694A;
+}
+/* line 44, ../sass/partials/_default.scss */
+.sunset .path {
+  fill: #104122;
+}
+
+/* line 50, ../sass/partials/_default.scss */
+.sunset-hover .whole-sun,
+.sunset-hover .sunrays,
+.sunset-hover .sunball,
+.sunset-hover .sky,
+.sunset-hover .earth,
+.sunset-hover .path {
+  -moz-transition: ease 1500ms;
+  -o-transition: ease 1500ms;
+  -webkit-transition: ease 1500ms;
+  transition: ease 1500ms;
+}
+/* line 59, ../sass/partials/_default.scss */
+.sunset-hover:hover .whole-sun {
+  -moz-transform: translate(0, 15%);
+  -ms-transform: translate(0, 15%);
+  -webkit-transform: translate(0, 15%);
+  transform: translate(0, 15%);
+}
+/* line 61, ../sass/partials/_default.scss */
+.sunset-hover:hover .whole-sun .sunrays {
+  fill: #a54127;
+}
+/* line 64, ../sass/partials/_default.scss */
+.sunset-hover:hover .whole-sun .sunball {
+  fill: #e1673d;
+}
+/* line 68, ../sass/partials/_default.scss */
+.sunset-hover:hover .sky {
+  fill: #FFDD4B;
+}
+/* line 71, ../sass/partials/_default.scss */
+.sunset-hover:hover .earth {
+  fill: #38694A;
+}
+/* line 74, ../sass/partials/_default.scss */
+.sunset-hover:hover .path {
+  fill: #104122;
+}
+
 /**
  * Styles for IE9+ compatibility
  */
-/* line 9, ../sass/style.scss */
+/* line 14, ../sass/style.scss */
 body {
-  background: #0f9cff;
+  background: #8bafd5;
   font-family: Helvetica, Arial, sans-serif;
   color: #fff;
 }
 
 /* line 20, ../sass/style.scss */
+.svg-bg {
+  background: url(../svg/start.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 0;
+  width: 100%;
+  padding-top: 100%;
+}
+
+/* line 34, ../sass/style.scss */
 .sun-icon .sunrays,
 .sun-icon .sunball {
   -moz-animation-name: pulse;
@@ -33,7 +153,7 @@ body {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-/* line 31, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 .sun-icon .whole-sun {
   -moz-animation-name: rotate;
   -webkit-animation-name: rotate;
@@ -57,7 +177,7 @@ body {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-/* line 42, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .sun-icon:hover .sunrays,
 .sun-icon:hover .whole-sun,
 .sun-icon:hover .sunball {
@@ -146,5 +266,58 @@ body {
     -ms-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+  }
+}
+/* line 85, ../sass/style.scss */
+.e3-path {
+  stroke-dasharray: 3239.2685546875 3239.2685546875;
+  stroke-dashoffset: 0;
+  -webkit-animation-name: e3-path-animate;
+  -moz-animation-name: e3-path-animate;
+  animation-name: e3-path-animate;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes e3-path-animate {
+  0% {
+    stroke-dashoffset: 3239.2685546875;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-moz-keyframes e3-path-animate {
+  0% {
+    stroke-dashoffset: 3239.2685546875;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes e3-path-animate {
+  0% {
+    stroke-dashoffset: 3239.2685546875;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes e3-path-animate {
+  0% {
+    stroke-dashoffset: 3239.2685546875;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }

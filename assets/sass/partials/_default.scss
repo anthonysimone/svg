@@ -1,0 +1,78 @@
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+}
+
+section.main-section {
+  padding: 5rem 0;
+  &:nth-child(2n) {
+    background: tint($color-primary, 10%);
+  }
+  &:nth-child(2n+1) {
+    background: $color-primary;
+  }
+}
+
+.shrink-click {
+  path,
+  polygon,
+  circle {
+    @include scale(1,1);
+    @include transition(1000ms, ease);
+    @include transform-origin(50%, 50%);
+  }
+}
+.shrink-click .shrink {
+  @include scale(0,0);
+}
+
+
+.sunset {
+  .whole-sun {
+    .sunrays {
+      fill: #a54127;
+    }
+    .sunball {
+      fill: #e1673d;
+    }
+  }
+  .sky {
+    fill: #FFDD4B;
+  }
+  .earth {
+    fill: #38694A;
+  }
+  .path {
+    fill: #104122;
+  }
+}
+
+.sunset-hover {
+  .whole-sun,
+  .sunrays,
+  .sunball,
+  .sky,
+  .earth,
+  .path {
+    @include transition(1500ms ease);
+  }
+  &:hover {
+    .whole-sun {
+      @include translate(0, 15%);
+      .sunrays {
+        fill: #a54127;
+      }
+      .sunball {
+        fill: #e1673d;
+      }
+    }
+    .sky {
+      fill: #FFDD4B;
+    }
+    .earth {
+      fill: #38694A;
+    }
+    .path {
+      fill: #104122;
+    }
+  }
+}

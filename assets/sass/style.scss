@@ -1,5 +1,10 @@
 @import 'compass/css3';
 
+@import 'partials/variables';
+@import 'partials/layout';
+@import 'partials/default';
+
+
 /**
  * Styles for IE9+ compatibility
  */
@@ -7,9 +12,18 @@
 
 
 body {
-  background: #0f9cff;
+  background: $color-primary;
   font-family: Helvetica, Arial, sans-serif;
   color: #fff;
+}
+
+.svg-bg {
+  background: url(../svg/start.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 0;
+  width: 100%;
+  padding-top: 100%; // for square, override below for different aspect ratio
 }
 
 
@@ -66,4 +80,40 @@ body {
   100% {
     @include transform(scale(1,1));
   }
+}
+
+.e3-path {
+  stroke-dasharray: 3239.2685546875 3239.2685546875;
+  stroke-dashoffset: 0;
+  -webkit-animation-name: e3-path-animate;
+  -moz-animation-name: e3-path-animate;
+  animation-name: e3-path-animate;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+@-webkit-keyframes e3-path-animate {
+  0%   { stroke-dashoffset: 3239.2685546875; }
+  100% { stroke-dashoffset: 0; }
+}
+@-moz-keyframes e3-path-animate {
+  0%   { stroke-dashoffset: 3239.2685546875; }
+  100% { stroke-dashoffset: 0; }
+}
+@-o-keyframes e3-path-animate {
+  0%   { stroke-dashoffset: 3239.2685546875; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes e3-path-animate {
+  0%   { stroke-dashoffset: 3239.2685546875; }
+  100% { stroke-dashoffset: 0; }
 }

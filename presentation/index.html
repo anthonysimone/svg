@@ -147,10 +147,12 @@
             <h2>Inline SVG</h2>
             <ul>
               <li>Drop the code inline into the HTML</li>
-              <li>This exposes every elemtn that composes the vector image to CSS and JS</li>
+              <li>This exposes every element that composes the vector image to CSS and JS</li>
               <li>We need to add this for IE:
               <pre><code>
-svg { //everywhere else doesn't need this, but if we support IE we must have it
+// everywhere else doesn't need this,
+// but if we support IE we must have it
+svg {
   max-width: 100%;
   width: 100%;
   height: 100%;
@@ -165,10 +167,12 @@ svg { //everywhere else doesn't need this, but if we support IE we must have it
             <ul>
               <li>For responsive behavior and happiness across all browsers, we need to use the padding hack with the container element</li>
               <pre><code>
-.svg-container { //inline svg needs a container and padding hack to responsively size
+// inline svg needs a container and
+// padding hack to responsively size
+.svg-container {
   width: 100%;
   height: 0;
-  padding-top: 128%; //targets the aspect ratio of the SVG
+  padding-top: 128%; // targets the aspect ratio of the SVG
   position: relative;
 }
 .svg-container svg {
@@ -207,11 +211,11 @@ img.svg { // this makes IE happy for responsive img.svg
   background-size: contain;
   height: 0;
   width: 100%;
-  padding-top: 128%;
+  padding-top: 128%; // targets the aspect ratio of the SVG
 }
                 </code></pre>
               </li>
-              <li><b>IE Alert:</b> - IE does not do background-position for svg. SO, if you want to control the background position (an icon next to a link) then you must add it as a BG within a pseudo-element and position that</li>
+              <li><b>IE Alert:</b> - IE refuses to do background-position for svg. So, if you want to control the background position (an icon next to a link) then you must add it as a BG within a pseudo-element and position that</li>
             </ul>
           </section>
         </section>
@@ -244,6 +248,8 @@ img.svg { // this makes IE happy for responsive img.svg
             <ul>
               <li>CSS Animations to target any element</li>
               <li>Animate stroke-dash-array</li>
+              <li>Embedded CSS animations within .svg file for static animations</li>
+              <li>SMIL</li>
             </ul>
           </section>
           <section>
@@ -265,7 +271,25 @@ img.svg { // this makes IE happy for responsive img.svg
           </section>
         </section>
 
-
+        <section>
+          <section>
+            <h2>Some concerns</h2>
+            <ul>
+              <li>
+                Complication can quickly increase, conceptually understanding functionality and limitations at design is important
+              </li>
+              <li>
+                Clean, simple vector exports are necessary for manipulation
+              </li>
+              <li>
+                ie - path, rect, circle, line elements, avoid clipping and masks, simple shapes with fill and/or stroke
+              </li>
+              <li>
+                Needs to serve a purpose, solve a problem, create simple dynamic interactivity, etc
+              </li>
+            </ul>
+          </section>
+        </section>
 
 
 
