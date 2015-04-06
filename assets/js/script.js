@@ -53,3 +53,36 @@ $('svg.shrink-click path, svg.shrink-click polygon, svg.shrink-click circle').on
 //var path = document.querySelector('.e3-path');
 //var pathLength = path.getTotalLength(); // 988.0062255859375
 //alert(pathLength);
+
+
+/**
+ * Green Sock
+ */
+var $gsapIcon = $('.sun-icon-gsap');
+var $gsapSun = $('.sun-icon-gsap .whole-sun');
+var $gsapRays = $('.sun-icon-gsap .sunrays');
+var sunTween = TweenMax.to($gsapRays, 6, {
+  rotation: 360,
+  ease: 'linear',
+  transformOrigin: "50% 50%",
+  repeat: -1,
+  paused: true
+});
+var sunRays = TweenMax.to($gsapSun, 0.500, {
+  scale: 1.1,
+  ease: 'linear',
+  transformOrigin: "50% 50%",
+  repeat: -1,
+  yoyo: true,
+  paused: true
+})
+function toggle() {
+  sunTween.paused(!sunTween.paused());
+}
+$gsapIcon.hover(function() {
+  sunTween.resume();
+  sunRays.resume();
+}, function() {
+  sunTween.pause();
+  sunRays.pause();
+});

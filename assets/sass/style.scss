@@ -61,6 +61,10 @@ body {
   }
 }
 
+.sun-icon-gsap .whole-sun {
+  @include animation-play-state(paused);
+}
+
 @include keyframes(rotate) {
   0% {
     @include transform(rotate(0deg));

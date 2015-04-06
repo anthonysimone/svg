@@ -186,6 +186,13 @@ body {
   animation-play-state: running;
 }
 
+/* line 64, ../sass/style.scss */
+.sun-icon-gsap .whole-sun {
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 @-moz-keyframes rotate {
   0% {
     -moz-transform: rotate(0deg);
@@ -268,7 +275,7 @@ body {
     transform: scale(1, 1);
   }
 }
-/* line 85, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 .e3-path {
   stroke-dasharray: 3239.2685546875 3239.2685546875;
   stroke-dashoffset: 0;
