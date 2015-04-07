@@ -9,12 +9,15 @@
  * Styles for IE9+ compatibility
  */
 
-
-
 body {
   background: $color-primary;
   font-family: Helvetica, Arial, sans-serif;
   color: #fff;
+}
+
+p, li {
+  color: #555;
+  font-size: 20px;
 }
 
 .svg-bg {
@@ -27,6 +30,11 @@ body {
 }
 
 
+.box {
+  width: 400px;
+  height: 100%;
+  max-width: 100%;
+}
 
 // Sun animation on hover
 .sun-icon {
@@ -120,4 +128,100 @@ body {
 @keyframes e3-path-animate {
   0%   { stroke-dashoffset: 3239.2685546875; }
   100% { stroke-dashoffset: 0; }
+}
+
+
+/**
+ * Style for weather icons
+ */
+.svg-container {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.svg-container svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/**
+ * Style for text masking snap.js
+ */
+
+#mask {
+  font-family: cursive;
+  font-weight: bold;
+  height: 200px;
+  width: 800px;
+  display: block;
+//  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+}
+
+
+.shrink-click {
+  path,
+  polygon,
+  circle {
+    @include scale(1,1);
+    @include transition(1000ms, ease);
+    @include transform-origin(50%, 50%);
+  }
+}
+.shrink-click .shrink {
+  @include scale(0,0);
+}
+
+
+.sunset {
+  .whole-sun {
+    .sunrays {
+      fill: #a54127;
+    }
+    .sunball {
+      fill: #e1673d;
+    }
+  }
+  .sky {
+    fill: #FFDD4B;
+  }
+  .earth {
+    fill: #38694A;
+  }
+  .path {
+    fill: #104122;
+  }
+}
+
+.sunset-hover {
+  .whole-sun,
+  .sunrays,
+  .sunball,
+  .sky,
+  .earth,
+  .path {
+    @include transition(1500ms ease);
+  }
+  &:hover {
+    .whole-sun {
+      @include translate(0, 15%);
+      .sunrays {
+        fill: #a54127;
+      }
+      .sunball {
+        fill: #e1673d;
+      }
+    }
+    .sky {
+      fill: #FFDD4B;
+    }
+    .earth {
+      fill: #38694A;
+    }
+    .path {
+      fill: #104122;
+    }
+  }
 }

@@ -231,17 +231,33 @@ var svgIconConfig = {
 				el : 'path', 
 				animProperties : { 
 					from : {
-                        val : '{"path" : "M 48.592939,9.792208 15.407062,31.887987 48.592939,54.025974", "stroke" : "#fff"}',
-                        animAfter : '{"stroke-width" : 5}'
+                        val : '{"path" : "M 48.592939,9.792208 15.407062,31.887987 48.592939,54.025974"}'
                     },
 					to : {
-                        val : '{"path" : "M 15.407062,9.792208 48.592939,31.887987 15.407062,54.025974", "stroke" : "#000"}',
-                        animAfter : '{"stroke-width" : 15}'
+                        val : '{"path" : "M 15.407062,9.792208 48.592939,31.887987 15.407062,54.025974"}'
                     }
 				} 
 			}
 		]
 	},
+  navLeftArrow2 : {
+    url : 'assets/svg/nav-left-arrow.svg',
+    animation : [
+      {
+        el : 'path',
+        animProperties : {
+          from : {
+            val : '{"path" : "M 48.592939,9.792208 15.407062,31.887987 48.592939,54.025974", "stroke" : "#fff"}',
+            animAfter : '{"stroke-width" : 5}'
+          },
+          to : {
+            val : '{"path" : "M 15.407062,9.792208 48.592939,31.887987 15.407062,54.025974", "stroke" : "#000"}',
+            animAfter : '{"stroke-width" : 15}'
+          }
+        }
+      }
+    ]
+  },
 	navUpArrow : {
 		url : 'assets/svg/nav-up-arrow.svg',
 		animation : [
@@ -352,6 +368,18 @@ var svgIconConfig = {
 			}
 		]
 	},
+  glass2 : {
+    url : 'assets/svg/glass.svg',
+    animation : [
+      {
+        el : 'path',
+        animProperties : {
+          from : { val : '{"path" : "m 16.778805,44 c 0,0 9.518312,-3.481153 13.221195,-2 10,4 17.153596,2 17.153596,2 L 45,54 20,54 z", "fill": "#000", "opacity": 0}' },
+          to : { val : '{"path" : "M 13.183347,29 C 13.183347,29 25,31.439358 30,29 c 12.710171,-6.200932 20,0 20,0 l -5,25 -25,0 z", "fill": "#176FD4", "opacity": 1}' }
+        }
+      }
+    ]
+  },
 	hourglass : {
 		url : 'assets/svg/hourglass.svg',
 		animation : [

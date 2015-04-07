@@ -78,7 +78,7 @@
     <div class="row">
       <div class="columns large-12">
         <h2>Target inline svg with CSS/JS</h2>
-        <p><b>Note:</b>CSS3 transforms are not handled consistently across browsers, specifically issues with transform-origin. Chrome behaves closest to as expected, for simplicity these transform are done with CSS, but for browser compatibility a JS library such as <a href="https://greensock.com/" target="_blank">Green Sock</a> or <a href="" target="_blank">snap.js</a> should be used.</p>
+        <p><b>Note:</b>CSS3 transforms on SVG elements are not handled consistently across browsers, specifically issues with transform-origin. Chrome behaves closest to as expected, for simplicity these transform are done with CSS, but for browser compatibility a JS library such as <a href="https://greensock.com/" target="_blank">Green Sock</a> or <a href="http://snapsvg.io/" target="_blank">snap.svg</a> should be used.</p>
         <p>Could also only include the -webkit- prefix and just include on -webkit- browsers, but that's hacky and not very future proof.</p>
       </div>
       <div class="columns medium-4">
@@ -186,12 +186,6 @@
         <img class="svg" src="assets/svg/logo-example2.svg"/>
       </div>
       <div class="columns small-4">
-        <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="" pagealignment="none" x="0px" y="0px" viewBox="0 0 842 595" enable-background="new 0 0 842 595" xml:space="preserve">-->
-            <!--<g>-->
-            <!--<path class="e3-path" stroke-miterlimit="3" stroke-width="10" stroke="#000000" fill="none" d="M277.2725581395349,428.69534883720934 C360.29767441860463,386.39953488372095 503.633488372093,297.8916279069767 461.33767441860465,236.79767441860463 C419.0418604651163,175.70372093023258 343.0660465116279,254.02930232558145 333.66697674418606,311.2069767441861 C324.2679069767442,368.3846511627907 312.51906976744203,459.2423255813954 398.6772093023257,420.07953488372095 C487.1851162790699,355.0693023255814 456.63813953488386,381.70000000000005 513.0325581395351,321.3893023255814 C578.8260465116281,254.81255813953487 604.6734883720933,236.01441860465115 636.0037209302328,233.6646511627907 C674.3832558139538,235.23116279069768 708.8465116279071,243.06372093023256 704.9302325581398,286.14279069767446 C703.3637209302328,321.3893023255814 665.7674418604653,337.0544186046512 602.3237209302328,352.71953488372094 C669.6837209302328,333.9213953488372 669.6837209302327,335.4879069767443 714.3293023255816,348.02000000000004 C758.9748837209305,367.60139534883723 754.2753488372099,469.4246511627907 647.752558139535,486.6562790697675 C527.131162790698,507.8041860465117 452.721860465118,508.5874418604653 347.765581395349,487.43953488372097 C242.80930232558165,466.2916279069767 225.57767441860477,420.07953488372095 195.81395348837222,370.7344186046512 C177.79906976744198,317.473023255814 228.71069767441873,214.866511627907 276.48930232558155,188.23581395348836 C341.4995348837211,158.4720930232558 366.56372093023157,153.77255813953488 490.31813953488387,158.4720930232558 C614.0725581395382,163.17162790697674 679.0827906976747,149.85627906976742 733.9106976744188,203.11767441860465 C789.5218604651164,260.2953488372093 801.2706976744188,315.12325581395373 798.1376744186049,407.54744186046514 C780.1227906976756,497.6218604651163 617.205581395349,533.6516279069764 520.0818604651165,557.9325581395349 ">-->
-            <!--</path>-->
-            <!--</g>-->
-        <!--</svg>-->
       </div>
     </div>
     <div class="row">
@@ -202,7 +196,6 @@
         <img class="svg" src="assets/svg/badge-plan-plate-1-animated.svg" />
       </div>
       <div class="columns small-4">
-        <img class="svg" src="assets/svg/e3-line.svg" />
       </div>
     </div>
   </section>
@@ -294,48 +287,224 @@
   </section>
 
   <section class="svg-toggles main-section">
-    <h2>Toggleables</h2>
-
-    <div class="si-icons si-icons-default">
-      <span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
-      <span class="si-icon si-icon-nav-up-arrow" data-icon-name="navUpArrow"></span>
-      <span class="si-icon si-icon-right-arrow" data-icon-name="rightArrow"></span>
-      <span class="si-icon si-icon-down-arrow" data-icon-name="downArrow"></span>
+    <div class="row">
+      <div class="columns large-12">
+        <h2>Toggleables</h2>
+        <p>Use snap.svg to target classes an initialize an svg icon. Uses the svg file to build the icon on the fly and handle interaction and animation</p>
+        <div class="si-icons si-icons-default">
+          <span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
+          <span class="si-icon si-icon-nav-up-arrow" data-icon-name="navUpArrow"></span>
+          <span class="si-icon si-icon-right-arrow" data-icon-name="rightArrow"></span>
+          <span class="si-icon si-icon-down-arrow" data-icon-name="downArrow"></span>
+          <span class="si-icon si-icon-hamburger" data-icon-name="hamburger"></span>
+          <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross"></span>
+          <span class="si-icon si-icon-plus" data-icon-name="plus"></span>
+          <span class="si-icon si-icon-plus-cross" data-icon-name="plusCross"></span>
+          <span class="si-icon si-icon-maximize" data-icon-name="maximize"></span>
+          <span class="si-icon si-icon-maximize-rotate" data-icon-name="maximizeRotate"></span>
+          <span class="si-icon si-icon-contract" data-icon-name="contract"></span>
+          <span class="si-icon si-icon-play" data-icon-name="play"></span>
+          <span class="si-icon si-icon-monitor" data-icon-name="monitor"></span>
+          <span class="si-icon si-icon-trash" data-icon-name="trash"></span>
+          <span class="si-icon si-icon-mail" data-icon-name="mail"></span>
+          <span class="si-icon si-icon-smiley" data-icon-name="smiley"></span>
+          <span class="si-icon si-icon-lock" data-icon-name="padlock"></span>
+          <span class="si-icon si-icon-hourglass" data-icon-name="hourglass"></span>
+          <span class="si-icon si-icon-zoom" data-icon-name="zoom"></span>
+        </div>
+        <div class="si-icons si-icons-easing">
+          <h2>With different speeds &amp; easings</h2>
+          <span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
+          <span class="si-icon si-icon-hamburger" data-icon-name="hamburger"></span>
+          <span class="si-icon si-icon-plus" data-icon-name="plus"></span>
+          <span class="si-icon si-icon-volume" data-icon-name="volume"></span>
+          <span class="si-icon si-icon-hourglass" data-icon-name="hourglass"></span>
+          <span class="si-icon si-icon-equalizer" data-icon-name="equalizer"></span>
+          <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross"></span>
+          <span class="si-icon si-icon-maximize" data-icon-name="maximize"></span>
+          <span class="si-icon si-icon-contract" data-icon-name="contract"></span>
+          <span class="si-icon si-icon-trash" data-icon-name="trash"></span>
+          <span class="si-icon si-icon-clock" data-icon-name="clock"></span>
+          <span class="si-icon si-icon-glass-empty" data-icon-name="glass"></span>
+        </div>
+        <div class="si-icons si-icons-hover">
+          <h2>Different size &amp; animation on hover</h2>
+          <span class="si-icon si-icon-clock" data-icon-name="clock"></span>
+          <span class="si-icon si-icon-zoom" data-icon-name="zoom"></span>
+          <span class="si-icon si-icon-flag" data-icon-name="flag"></span>
+          <span class="si-icon si-icon-equalizer" data-icon-name="equalizer"></span>
+          <span class="si-icon si-icon-hamburger" data-icon-name="hamburger"></span>
+          <span class="si-icon si-icon-maximize" data-icon-name="maximize"></span>
+        </div>
+        <div class="e3-icons">
+          <h2>Custimze the animation or the options</h2>
+          <span class="si-icon si-icon-maximize-rotate" data-icon-name="maximizeRotate"></span>
+          <span class="si-icon si-icon-maximize-rotate-2" data-icon-name="maximizeRotate2"></span>
+          <span class="si-icon si-icon-nav-left-arrow-2" data-icon-name="navLeftArrow2"></span>
+          <span class="si-icon si-icon-glass-2" data-icon-name="glass2"></span>
+          <span class="si-icon si-icon-hourglass" data-icon-name="hourglass"></span>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section class="main-section">
+    <div class="row">
+      <div class="columns large-12">
+        <h2>SMIL Example</h2>
+        <p>Animation elements are embedded in the svg file. Not supported at all by IE, supported everywhere else.</p>
+        <button class="rerun-smil">Rerun SMIL</button>
+        <div class="box smil-box">
+          <img class="svg" src="assets/svg/smil-example-3.svg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-section">
+    <div class="row">
+      <div class="columns large-12">
+        <h2>Line Animation</h2>
+      </div>
+      <div class="columns medium-6">
+        <h3>Use stroke-dasharray and animated the stroke-dashoffset property</h3>
+        <p>Get the length of the path (can do with JS path.getTotalLength() ), if path length = 10, stroke-dasharray: 10 10, animate the stroke-dashoffset property from 0 to 10 or vice versa</p>
+        <p>Can use CSS animations to animate stroke-dashoffset over 2 keyframes, may still not work in IE. Can also use JS.</p>
+        <p><a href="http://jakearchibald.com/2013/animated-line-drawing-svg/" target="_blank">Good Explanation</a>, <a href="http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/" target="_blank">fancy examples</a></p>
+      </div>
+      <div class="columns medium-6">
+        <button class="rerun-line-animation">Rerun</button>
+        <div class="line-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="" pagealignment="none" x="0px" y="0px" viewBox="0 0 842 595" enable-background="new 0 0 842 595" xml:space="preserve">
+            <g>
+            <path class="e3-path" stroke-miterlimit="3" stroke-width="10" stroke="#000000" fill="none" d="M277.2725581395349,428.69534883720934 C360.29767441860463,386.39953488372095 503.633488372093,297.8916279069767 461.33767441860465,236.79767441860463 C419.0418604651163,175.70372093023258 343.0660465116279,254.02930232558145 333.66697674418606,311.2069767441861 C324.2679069767442,368.3846511627907 312.51906976744203,459.2423255813954 398.6772093023257,420.07953488372095 C487.1851162790699,355.0693023255814 456.63813953488386,381.70000000000005 513.0325581395351,321.3893023255814 C578.8260465116281,254.81255813953487 604.6734883720933,236.01441860465115 636.0037209302328,233.6646511627907 C674.3832558139538,235.23116279069768 708.8465116279071,243.06372093023256 704.9302325581398,286.14279069767446 C703.3637209302328,321.3893023255814 665.7674418604653,337.0544186046512 602.3237209302328,352.71953488372094 C669.6837209302328,333.9213953488372 669.6837209302327,335.4879069767443 714.3293023255816,348.02000000000004 C758.9748837209305,367.60139534883723 754.2753488372099,469.4246511627907 647.752558139535,486.6562790697675 C527.131162790698,507.8041860465117 452.721860465118,508.5874418604653 347.765581395349,487.43953488372097 C242.80930232558165,466.2916279069767 225.57767441860477,420.07953488372095 195.81395348837222,370.7344186046512 C177.79906976744198,317.473023255814 228.71069767441873,214.866511627907 276.48930232558155,188.23581395348836 C341.4995348837211,158.4720930232558 366.56372093023157,153.77255813953488 490.31813953488387,158.4720930232558 C614.0725581395382,163.17162790697674 679.0827906976747,149.85627906976742 733.9106976744188,203.11767441860465 C789.5218604651164,260.2953488372093 801.2706976744188,315.12325581395373 798.1376744186049,407.54744186046514 C780.1227906976756,497.6218604651163 617.205581395349,533.6516279069764 520.0818604651165,557.9325581395349 ">
+            </path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-section">
+    <div class="row">
+      <div class="columns large-12">
+        <h2>
+          More Snap.svg <a href="http://codepen.io/collection/edpyJ/" target="_blank">examples</a>,
+          and <a href="http://davidwalsh.name/demo/svg-animations-snap/index.html" target="_blank">here</a> too.
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-4">
+        <div class="svg-container">
+          <svg version="1.1" id="sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" xml:space="preserve">
+<path id="circle" fill="#1D1D1B" d="M256,144c-61.75,0-112,50.25-112,112s50.25,112,112,112s112-50.25,112-112S317.75,144,256,144z M256,336
+	c-44.188,0-80-35.812-80-80c0-44.188,35.812-80,80-80c44.188,0,80,35.812,80,80C336,300.188,300.188,336,256,336z"/>
+<path id="rays" fill="#1D1D1B" d="M256,112c8.833,0,16-7.167,16-16V64c0-8.833-7.167-16-16-16s-16,7.167-16,16v32
+	C240,104.833,247.167,112,256,112z M256,400c-8.833,0-16,7.167-16,16v32c0,8.833,7.167,16,16,16s16-7.167,16-16v-32
+	C272,407.167,264.833,400,256,400z M380.438,154.167l22.625-22.625c6.25-6.25,6.25-16.375,0-22.625s-16.375-6.25-22.625,0
+	l-22.625,22.625c-6.25,6.25-6.25,16.375,0,22.625S374.188,160.417,380.438,154.167z M131.562,357.834l-22.625,22.625
+	c-6.25,6.249-6.25,16.374,0,22.624s16.375,6.25,22.625,0l22.625-22.624c6.25-6.271,6.25-16.376,0-22.625
+	C147.938,351.583,137.812,351.562,131.562,357.834z M112,256c0-8.833-7.167-16-16-16H64c-8.833,0-16,7.167-16,16s7.167,16,16,16h32
+	C104.833,272,112,264.833,112,256z M448,240h-32c-8.833,0-16,7.167-16,16s7.167,16,16,16h32c8.833,0,16-7.167,16-16
+	S456.833,240,448,240z M131.541,154.167c6.251,6.25,16.376,6.25,22.625,0c6.251-6.25,6.251-16.375,0-22.625l-22.625-22.625
+	c-6.25-6.25-16.374-6.25-22.625,0c-6.25,6.25-6.25,16.375,0,22.625L131.541,154.167z M380.459,357.812
+	c-6.271-6.25-16.376-6.25-22.625,0c-6.251,6.25-6.271,16.375,0,22.625l22.625,22.625c6.249,6.25,16.374,6.25,22.624,0
+                                  s6.25-16.374,0-22.625L380.459,357.812z"/>
+</svg>
+        </div>
+        <div class="svg-container">
+          <svg version="1.1" id="cloud_snow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512" height="512" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path id="flake-1" data-translate-origin="0,-200"  fill="#1D1D1B" d="M326.042,443.688l-18-10.376c0.542-3.124,0.958-6.311,0.958-9.624c0-3.312-0.416-6.5-1-9.625l18.042-10.396
+	c8.417-4.917,11.291-15.729,6.458-24.104c-4.876-8.479-15.667-11.375-24.125-6.5l-18.188,10.5c-4.877-4.146-10.375-7.396-16.5-9.604
+	v-20.896c0-9.771-7.938-17.688-17.688-17.688s-17.666,7.917-17.666,17.688v20.875c-6.126,2.188-11.646,5.479-16.521,9.625
+	l-18.146-10.5c-8.479-4.875-19.292-2-24.167,6.479c-4.875,8.417-1.938,19.25,6.5,24.126l17.959,10.375
+	c-0.584,3.146-0.959,6.334-0.959,9.646s0.375,6.5,0.959,9.623L186,443.688c-8.459,4.875-11.375,15.75-6.5,24.188
+	s15.688,11.312,24.125,6.438l18.167-10.438c4.874,4.125,10.396,7.375,16.542,9.562v20.938c0,9.749,7.916,17.624,17.666,17.624
+	s17.688-7.875,17.688-17.624v-20.938c6.125-2.188,11.688-5.438,16.521-9.625l18.167,10.5c8.458,4.875,19.249,2,24.125-6.438
+	C337.375,459.438,334.5,448.625,326.042,443.688z M256,441.375c-9.75,0-17.688-7.938-17.688-17.688s7.938-17.646,17.688-17.646
+	s17.667,7.896,17.667,17.646S265.75,441.375,256,441.375z"/>
+<path id="flake-2" fill="#1D1D1B" d="M474.166,396.25l-12.083-3.208c-0.291-3.833-1.208-7.479-2.896-10.979l8.771-8.771
+	c4.125-4.125,4.104-10.792,0-14.854c-4.083-4.104-10.708-4.125-14.833,0l-8.791,8.75c-3.459-1.625-7.146-2.562-10.959-2.875
+	l-3.209-12.062c-1.499-5.583-7.25-8.938-12.874-7.438c-5.604,1.521-8.875,7.271-7.417,12.875l3.209,11.896
+	c-1.584,1.084-3.084,2.292-4.5,3.667c-1.375,1.417-2.542,2.916-3.626,4.459l-11.896-3.209c-5.604-1.499-11.396,1.876-12.896,7.438
+	c-1.499,5.625,1.876,11.354,7.417,12.875l12,3.229c0.334,3.771,1.292,7.458,2.979,10.959l-8.812,8.812
+	c-4.083,4.104-4.062,10.729,0.042,14.812c4.083,4.083,10.708,4.125,14.792,0.042l8.832-8.833c3.459,1.707,7.168,2.666,11.001,2.957
+	l3.166,12.021c1.542,5.604,7.25,8.938,12.876,7.438c5.583-1.5,8.957-7.249,7.458-12.917l-3.209-11.896
+	c1.5-1.062,3.042-2.25,4.459-3.625c1.375-1.396,2.542-2.938,3.624-4.479l11.917,3.209c5.604,1.5,11.375-1.854,12.854-7.417
+	C483.062,403.541,479.75,397.792,474.166,396.25z M438.312,402.938c-4.125,4.125-10.771,4.104-14.875,0
+                                     c-4.062-4.062-4.104-10.729,0-14.854c4.104-4.083,10.771-4.083,14.875,0C442.375,392.188,442.375,398.875,438.312,402.938z"/>
+<path id="flake-3" fill="#1D1D1B" d="M131.835,349.936c-1.501-5.56-7.251-8.894-12.897-7.436l-11.875,3.188c-1.104-1.5-2.25-3.021-3.646-4.438
+	c-1.416-1.375-2.916-2.562-4.479-3.625l3.188-11.938c1.5-5.604-1.834-11.375-7.375-12.854c-5.625-1.5-11.375,1.834-12.875,7.417
+	l-3.25,12.062c-3.812,0.312-7.458,1.25-10.938,2.896l-8.812-8.771c-4.125-4.125-10.75-4.104-14.834,0
+	c-4.104,4.104-4.104,10.75,0,14.854l8.771,8.771c-1.646,3.5-2.604,7.188-2.896,10.979l-12.042,3.208
+	c-5.625,1.542-8.959,7.25-7.458,12.875c1.521,5.583,7.271,8.875,12.896,7.417l11.875-3.23c1.062,1.604,2.25,3.105,3.688,4.502
+	c1.375,1.375,2.875,2.604,4.438,3.625l-3.188,11.896c-1.5,5.625,1.834,11.417,7.416,12.917c5.626,1.5,11.334-1.833,12.834-7.438
+	l3.25-12c3.812-0.312,7.5-1.271,11-2.938l8.791,8.792c4.084,4.124,10.709,4.041,14.834-0.042c4.062-4.062,4.125-10.708,0-14.812
+	L109.439,377c1.688-3.46,2.688-7.188,2.938-11.001l12.062-3.188C130.001,361.29,133.335,355.561,131.835,349.936z M88.562,370.958
+	c-4.104,4.104-10.75,4.104-14.875,0c-4.062-4.083-4.062-10.771,0-14.833c4.125-4.083,10.771-4.083,14.875,0
+	S92.625,366.875,88.562,370.958z"/>
+<path id="cloud-outline" fill="#1D1D1B" d="M512,176c0-61.75-50.25-112-112-112c-5.312,0-10.562,0.375-15.792,1.125C354.334,24.417,307.188,0,256,0
+	c-51.188,0-98.312,24.417-128.208,65.125C122.562,64.375,117.312,64,112,64C50.25,64,0,114.25,0,176s50.25,112,112,112
+	c13.688,0,27.084-2.5,39.709-7.333C180.666,305.917,217.5,320,256,320c38.542,0,75.333-14.083,104.291-39.333
+	C372.916,285.5,386.312,288,400,288C461.75,288,512,237.75,512,176z"/>
+<path id="cloud-interior" fill="#FFFFFF" d="M354.062,241.333C330.584,269.625,295.624,288,256,288c-39.625,0-74.584-18.375-98.062-46.667
+	C144.938,250.5,129.125,256,112,256c-44.188,0-80-35.812-80-80s35.812-80,80-80c10.812,0,21.062,2.208,30.438,6.083
+	C163.667,60.667,206.291,32,256,32s92.334,28.667,113.541,70.083C378.938,98.208,389.209,96,400,96c44.188,0,80,35.812,80,80
+	s-35.812,80-80,80C382.875,256,367.084,250.5,354.062,241.333z"/>
+</svg>
+        </div>
+        <div class="svg-container">
+          <svg id="cloud_lightning" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon id="lightning-bolt" opacity="0" fill="#1D1D1B" points="192,352 224,384 192,480 288,384 256,352 288,256 "/>
+<path id="cloud-outline" fill="#1D1D1B" d="M512,176c0-61.75-50.25-112-112-112c-5.312,0-10.562,0.375-15.792,1.125C354.334,24.417,307.188,0,256,0
+	c-51.188,0-98.312,24.417-128.208,65.125C122.562,64.375,117.312,64,112,64C50.25,64,0,114.25,0,176s50.25,112,112,112
+	c13.688,0,27.084-2.5,39.709-7.333C180.666,305.917,217.5,320,256,320c38.542,0,75.333-14.083,104.291-39.333
+	C372.916,285.5,386.312,288,400,288C461.75,288,512,237.75,512,176z"/>
+<path id="cloud-interior" fill="#FFFFFF" d="M354.062,241.333C330.584,269.625,295.624,288,256,288c-39.625,0-74.584-18.375-98.062-46.667
+	C144.938,250.5,129.125,256,112,256c-44.188,0-80-35.812-80-80c0-44.188,35.812-80,80-80c10.812,0,21.062,2.208,30.438,6.083
+	C163.667,60.667,206.291,32,256,32s92.334,28.667,113.541,70.083C378.938,98.208,389.209,96,400,96c44.188,0,80,35.812,80,80
+	c0,44.188-35.812,80-80,80C382.875,256,367.084,250.5,354.062,241.333z"/>
+</svg>
+        </div>
+      </div>
+      <div class="columns large-8">
+        <svg id="mask"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-section">
+    <div class="row">
+      <div class="columns large-12">
+        <h2>D3 - data visualization</h2>
+        <h3>Interactive charts</h3>
+      </div>
+      <div class="columns large-12">
+
+      </div>
+    </div>
+  </section>
+
   <section class="notes main-section">
-    <div>
-      Resources
-      <ul>
-        <ul>- SVG Icon animations - http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/</ul>
-        <ul>- Responsive svg - http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/</ul>
-        <ul>- Nesting 3d transforms - http://davidwalsh.name/3d-transforms</ul>
-        <ul>- Sara Soueidan Smashing Magazine series -
-          http://www.smashingmagazine.com/2014/11/03/styling-and-animating-svgs-with-css/
-        </ul>
-      </ul>
-      SVG Notes
-      <ul>
-        <li>- Benefits</li>
+    <div class="row">
+      <div class="columns large-12">
+        <h2>Some Resources</h2>
         <ul>
-          <li>- OMG so many</li>
-          <li>- support in IE9+, and all other modern-ish browsers</li>
-          <li>- IE9-11 doesn't always play by the same rules, unfortunately</li>
-          <li>- In safari/chrome/ff/opera svg acts almost exactly as you'd expect images to act, inline and as bg, IE
-            makes a bit more complicated, but once you know how IE behaves, it's not too hard to work around
-          </li>
+          <li><a href="http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/" target="_blank">"Responsive" SVG</a></li>
+          <li>Sara Soueidan Smashing Magazine <a href="http://www.smashingmagazine.com/2014/11/03/styling-and-animating-svgs-with-css/" target="_blank">series</a></li>
+          <li><a href="https://css-tricks.com/guide-svg-animations-smil/" target="_blank">SMIL Animation</a></li>
+          <li><a href="http://snapsvg.io/" target="_blank">Snap.svg</a></li>
+          <li><a href="http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/" target="_blank">SVG Icon animations</a> - with snap.svg</li>
+          <li><a href="http://tympanus.net/codrops/2014/01/07/shape-hover-effect-with-svg/" target="_blank">SVG Path animations</a> - with snap.svg</li>
+          <li><a href="http://jakearchibald.com/2013/animated-line-drawing-svg/" target="_blank">Line Animation</a></li>
+          <li><a href="https://css-tricks.com/mega-list-svg-information/" target="_blank">All of the information</a> about SVG</li>
         </ul>
-        <li>- Drawbacks</li>
-        <ul>
-          <li>- no IE8, flatout</li>
-          <li>- they don't necessarily play nice as uploaded content into CMS</li>
-          <li>- There are spriting options available, but not</li>
-        </ul>
-        <li>- Go over bg, inline, <img></li>
-        <li>- NJH example</li>
-        <li>- Some other examples of usecases</li>
-        <li>- snap.js / svg.js - libraries for on the fly svg creation and manipulation</li>
-      </ul>
+      </div>
     </div>
   </section>
 </div>
