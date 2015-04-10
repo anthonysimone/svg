@@ -64,7 +64,7 @@
         </div>
         <div class="columns medium-4">
           <h3>&lt;img&gt;</h3>
-          <img class="img-svg" src="assets/svg/start.svg"/>
+          <img class="svg" src="assets/svg/start.svg"/>
         </div>
         <div class="columns medium-4">
           <h3>CSS BG</h3>
@@ -80,9 +80,11 @@
         <h2>Target inline svg with CSS/JS</h2>
         <p><b>Note:</b>CSS3 transforms on SVG elements are not handled consistently across browsers, specifically issues with transform-origin. Chrome behaves closest to as expected, for simplicity these transform are done with CSS, but for browser compatibility a JS library such as <a href="https://greensock.com/" target="_blank">Green Sock</a> or <a href="http://snapsvg.io/" target="_blank">snap.svg</a> should be used.</p>
         <p>Could also only include the -webkit- prefix and just include on -webkit- browsers, but that's hacky and not very future proof.</p>
+        <p>On IE, CSS Transforms on SVG properties such as fill and stroke still don't seem to work.</p>
       </div>
       <div class="columns medium-4">
         <h3>Add class .sunset</h3>
+        <div class="inline-svg">
         <svg class="sunset" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 76.5 76.5" enable-background="new 0 0 76.5 76.5" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
               <g>
@@ -109,9 +111,11 @@
               </g>
               <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
+        </div>
       </div>
       <div class="columns medium-4">
         <h3>Sunset on hover</h3>
+        <div class="inline-svg">
         <svg class="sunset-hover" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 76.5 76.5" enable-background="new 0 0 76.5 76.5" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
               <g>
@@ -138,9 +142,11 @@
               </g>
               <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
+          </div>
       </div>
       <div class="columns medium-4">
         <h3>Target with JS</h3>
+        <div class="inline-svg">
         <svg class="shrink-click" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 76.5 76.5" enable-background="new 0 0 76.5 76.5" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
               <g>
@@ -167,6 +173,7 @@
               </g>
               <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
+          </div>
       </div>
     </div>
   </section>
@@ -176,7 +183,9 @@
       <h2>"Responsive" SVG</h2>
       <p>SVG supports &lt;style&gt;. Meaning, we can use svg with &lt;img&gt; and an embedded &gt;style&lt; tag to create a "responsive" graphic.</p>
       <p>In this case, we are creating a semi dynamic, but non interactive svg file. Also, the viewport in these embedded tags is not the browser window, but the SVG canvas size, which, in this instance, is beneficial.</p>
+      <p>This even works in IE!</p>
       <p>These styles live in their own world and do not interact with the user/browser. ie. - :hover will not work.</p>
+      <p>You can also inline CSS3 keyframes and animations within the svg file to create a dynamic, static asset, however these only seem to function in -webkit- browsers</p>
       <div class="columns small-4">
         <h3>Include embedded media queries</h3>
         <img class="svg" src="assets/svg/logo-example.svg"/>
@@ -205,6 +214,7 @@
       <h2>Animate it!</h2>
       <div class="columns small-4">
         <h3>CSS3 animations</h3>
+        <div class="inline-svg">
         <svg class="sun-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                viewBox="0 0 76.5 76.5" enable-background="new 0 0 76.5 76.5" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
@@ -240,11 +250,12 @@
                 </g>
                 <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
-        <p>Support is fine unless you are working with transforms. Different browsers handle transforms on SVG elements differently than other HTML elements and different from each other.</p>
+          </div>
+        <p>Support is fine unless you are working with transforms or IE. Different browsers handle transforms on SVG elements differently than other HTML elements and different from each other.</p>
       </div>
       <div class="columns small-4">
         <h3>GSAP - Green Sock</h3>
-        <div class="sun-icon-gsap-holder">
+        <div class="sun-icon-gsap-holder inline-svg">
         <svg class="sun-icon-gsap" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                viewBox="0 0 76.5 76.5" enable-background="new 0 0 76.5 76.5" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
                 <g>
@@ -281,6 +292,7 @@
                 <circle fill="none" stroke="#0E90D0" stroke-width="3.27" stroke-miterlimit="10" cx="38.3" cy="38.3" r="36.6"/>
             </svg>
         </div>
+        <p>Green Sock animation replicates the previous CSS3 animation but works cross browser, even in IE9!</p>
       </div>
       <div class="columns small-4"></div>
     </div>
@@ -352,7 +364,7 @@
     <div class="row">
       <div class="columns large-12">
         <h2>SMIL Example</h2>
-        <p>Animation elements are embedded in the svg file. Not supported at all by IE, supported everywhere else.</p>
+        <p>Animation elements are embedded in the svg file via the SMIL spec. Not supported at all by IE, supported everywhere else.</p>
         <button class="rerun-smil">Rerun SMIL</button>
         <div class="box smil-box">
           <img class="svg" src="assets/svg/smil-example-3.svg" />
@@ -369,12 +381,12 @@
       <div class="columns medium-6">
         <h3>Use stroke-dasharray and animated the stroke-dashoffset property</h3>
         <p>Get the length of the path (can do with JS path.getTotalLength() ), if path length = 10, stroke-dasharray: 10 10, animate the stroke-dashoffset property from 0 to 10 or vice versa</p>
-        <p>Can use CSS animations to animate stroke-dashoffset over 2 keyframes, may still not work in IE. Can also use JS.</p>
+        <p>Can use CSS animations to animate stroke-dashoffset over 2 keyframes. Does not work in IE. Can also use JS to animate the stroke-dashoffset property for IE compatibility.</p>
         <p><a href="http://jakearchibald.com/2013/animated-line-drawing-svg/" target="_blank">Good Explanation</a>, <a href="http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/" target="_blank">fancy examples</a></p>
       </div>
       <div class="columns medium-6">
         <button class="rerun-line-animation">Rerun</button>
-        <div class="line-animation">
+        <div class="line-animation inline-svg">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="" pagealignment="none" x="0px" y="0px" viewBox="0 0 842 595" enable-background="new 0 0 842 595" xml:space="preserve">
             <g>
             <path class="e3-path" stroke-miterlimit="3" stroke-width="10" stroke="#000000" fill="none" d="M277.2725581395349,428.69534883720934 C360.29767441860463,386.39953488372095 503.633488372093,297.8916279069767 461.33767441860465,236.79767441860463 C419.0418604651163,175.70372093023258 343.0660465116279,254.02930232558145 333.66697674418606,311.2069767441861 C324.2679069767442,368.3846511627907 312.51906976744203,459.2423255813954 398.6772093023257,420.07953488372095 C487.1851162790699,355.0693023255814 456.63813953488386,381.70000000000005 513.0325581395351,321.3893023255814 C578.8260465116281,254.81255813953487 604.6734883720933,236.01441860465115 636.0037209302328,233.6646511627907 C674.3832558139538,235.23116279069768 708.8465116279071,243.06372093023256 704.9302325581398,286.14279069767446 C703.3637209302328,321.3893023255814 665.7674418604653,337.0544186046512 602.3237209302328,352.71953488372094 C669.6837209302328,333.9213953488372 669.6837209302327,335.4879069767443 714.3293023255816,348.02000000000004 C758.9748837209305,367.60139534883723 754.2753488372099,469.4246511627907 647.752558139535,486.6562790697675 C527.131162790698,507.8041860465117 452.721860465118,508.5874418604653 347.765581395349,487.43953488372097 C242.80930232558165,466.2916279069767 225.57767441860477,420.07953488372095 195.81395348837222,370.7344186046512 C177.79906976744198,317.473023255814 228.71069767441873,214.866511627907 276.48930232558155,188.23581395348836 C341.4995348837211,158.4720930232558 366.56372093023157,153.77255813953488 490.31813953488387,158.4720930232558 C614.0725581395382,163.17162790697674 679.0827906976747,149.85627906976742 733.9106976744188,203.11767441860465 C789.5218604651164,260.2953488372093 801.2706976744188,315.12325581395373 798.1376744186049,407.54744186046514 C780.1227906976756,497.6218604651163 617.205581395349,533.6516279069764 520.0818604651165,557.9325581395349 ">
@@ -473,7 +485,9 @@
         </div>
       </div>
       <div class="columns large-8">
-        <svg id="mask"></svg>
+        <div class="inline-svg">
+          <svg id="mask"></svg>
+        </div>
       </div>
     </div>
   </section>

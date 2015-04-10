@@ -5,7 +5,7 @@ var svgIconConfig = {
 			{ 
 				el : 'path:nth-child(2)', 
 				animProperties : { 
-					from : { val : '{"transform" : "r0 32 32"}' }, 
+					from : { val : '{"transform" : "r0 32 32"}' },
 					to : { val : '{"transform" : "r630 32 32"}' } 
 				} 
 			},
